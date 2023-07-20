@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio2_1_Grupo1.Views.ListadoVideos" BackgroundColor="#85a3bd" Title="ListadoVideos">
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <ListView x:Name="listavideos"   HasUnevenRows="True" SeparatorVisibility="None" ItemTapped="listavideos_ItemTapped"  ItemSelected="listavideos_ItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <ViewCell>
+
+                            <Grid Padding="10"  >
+
+                                <Frame CornerRadius="15"  BackgroundColor="#ceecff" HasShadow="True">
+
+                                    <SwipeView>
+                                        <SwipeView.LeftItems>
+                                            <SwipeItem  Text="Vervideo"
+                                                        BackgroundColor="#6c8aa7"
+                                                        Invoked="Vervideo" 
+                                                      
+                                                       />
+                                        </SwipeView.LeftItems>
+
+                                        <StackLayout  Orientation="Horizontal">
+
+
+                                            <StackLayout Orientation="Vertical">
+
+                                                <Label Text="{Binding id}" Grid.Row="0" Grid.Column="0"   />
+                                                <Label Text="{Binding nombre}" Grid.Row="0" Grid.Column="1" />
+                                                <Label Text="{Binding videoUrl}" Grid.Row="0" Grid.Column="2" />
+                                                <Label Text="{Binding descripcion}" Grid.Row="0" Grid.Column="3" />
+
+                                            </StackLayout>
+
+
+
+                                        </StackLayout>
+
+                                    </SwipeView>
+
+                                </Frame>
+
+
+
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

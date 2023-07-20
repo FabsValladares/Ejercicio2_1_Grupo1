@@ -1,0 +1,35 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:video="clr-namespace:Xam.Forms.VideoPlayer;assembly=Xam.Forms.VideoPlayer"
+             x:Class="Ejercicio2_1_Grupo1.MainPage">
+
+    <StackLayout Spacing="20" Padding="20" BackgroundColor="#ceecff" >
+        <Frame BackgroundColor="#6c8aa7" Padding="24" CornerRadius="5">
+            <Label Text="Grabación de Videos" HorizontalTextAlignment="Center" TextColor="White" FontSize="33"/>
+        </Frame>
+
+
+        <StackLayout x:Name="videoContainer" BackgroundColor="#85a3bd" Margin="0, 20, 0, 20">
+            <video:VideoPlayer PlayCompletion="videoPlayer_PlayCompletion"   x:Name="videoPlayer" 
+                HorizontalOptions="Center"
+                HeightRequest="200" WidthRequest="300"/>
+        </StackLayout>
+
+      
+
+
+        <Label FontSize="20" TextColor="black"  FontFamily="Arial-Bold" Text="Nombre:" Margin="0, 0, 0, 5"/>
+        <Entry FontSize="20" x:Name="txtNombre" />
+
+        <Label FontSize="20" TextColor="black"  FontFamily="Arial-Bold" Text="Descripción:" Margin="0, 0, 0, 5"/>
+        <Entry FontSize="20" x:Name="txtdescripcion" />
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="20">
+            <Button Text="Tomar Video" x:Name="btnTomarVideo" Clicked="btnTomarVideo_Clicked" BackgroundColor="#9dbbd3" TextColor="White" HorizontalOptions="Start" WidthRequest="100"/>
+            <Button Text="Guardar" x:Name="btnGuardar" Clicked="btnGuardar_Clicked" BackgroundColor="#9dbbd3" TextColor="White" HorizontalOptions="End" WidthRequest="100"/>
+            <Button Text="Ver Listado" x:Name="btnVerListado" Clicked="btnVerListado_Clicked" BackgroundColor="#9dbbd3" TextColor="White" HorizontalOptions="End" WidthRequest="100"/>
+        </StackLayout>
+
+        
+    </StackLayout>
+</ContentPage>
